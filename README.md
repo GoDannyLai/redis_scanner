@@ -4,7 +4,7 @@
     redis_scanner解决了redis-cli --bigkeys抽样与list等复合类型的KEY不准确的问题， 也解决了现在某些同类型的工具速度慢的问题<br/>
         1）生成csv格式的bigkey报表， 指定-st -li XXX会按KEY大小排序并输出最大的XXX个KEY：
             redis_scanner -H 192.168.xx.125 -P 6380 -dc -o tmp -si 1024 -st -li 100 -ts -w bigkey -ps 1
-![bigkey](https://github.com/GoDannyLai/trident/raw/master/misc/img/bigkey.png)
+![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/bigkey.png)
 			结果文件每列的含义如下：
 				db: redis database number
 				sizeInByte: key所占内存的大小， 单位byte
@@ -14,19 +14,19 @@
 				bigSize: 复合类型key所有元素中占用内存最大的元素的内存大小, 单位byte
 				key: key名
 				big: 最大元素名
-![bigkey](https://github.com/GoDannyLai/trident/raw/master/misc/img/bigkeys_csv.png)
+![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/bigkeys_csv.png)
 
         2）dump出指定的KEY的value
         	redis_scanner -H 192.168.xx.125 -P 6380 -dc -o tmp -si 1024 -ts -w dump -ps 1
-![bigkey](https://github.com/GoDannyLai/trident/raw/master/misc/img/dumpkey.png)
+![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/dumpkey.png)
 			结果为json格式， 加了-b更易读，否则是一行一个key
-![bigkey](https://github.com/GoDannyLai/trident/raw/master/misc/img/dumpkey_json.png)			
+![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/dumpkey_json.png)			
            
         3) 删除指定的KEY
             安全起见，一般先dry run来输出所有符合条件的KEY， 然后再删除
-![bigkey](https://github.com/GoDannyLai/trident/raw/master/misc/img/delete_dryrun.png)	
+![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/delete_dryrun.png)	
 			真正删除dry run结果中的所有KEY
-![bigkey](https://github.com/GoDannyLai/trident/raw/master/misc/img/delete.png)
+![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/delete.png)
 
 
 # 参数解释
