@@ -9,15 +9,15 @@
 			
 ![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/bigkey.png)
 			
-			结果文件每列的含义如下：
-				db: redis database number
-				sizeInByte: key所占内存的大小， 单位byte
-				elementCnt: 复合类型key的元素个数
-				type: key的类型
-				expire: 过期时间， 空则为没有设置过期时间
-				bigSize: 复合类型key所有元素中占用内存最大的元素的内存大小, 单位byte
-				key: key名
-				big: 最大元素名
+		结果文件每列的含义如下：
+			db: redis database number
+			sizeInByte: key所占内存的大小， 单位byte
+			elementCnt: 复合类型key的元素个数
+			type: key的类型
+			expire: 过期时间， 空则为没有设置过期时间
+			bigSize: 复合类型key所有元素中占用内存最大的元素的内存大小, 单位byte
+			key: key名
+			big: 最大元素名
 				
 ![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/bigkeys_csv.png)
 
@@ -26,14 +26,14 @@
 			
 ![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/dumpkey.png)
 			
-			结果为json格式， 加了-b更易读，否则是一行一个key
+		结果为json格式， 加了-b更易读，否则是一行一个key
 ![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/dumpkey_json.png)			
            
         3) 删除指定的KEY
             安全起见，一般先dry run来输出所有符合条件的KEY， 然后再删除
 ![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/delete_dryrun.png)	
 			
-			真正删除dry run结果中的所有KEY
+		真正删除dry run结果中的所有KEY
 ![bigkey](https://github.com/GoDannyLai/redis_scanner/raw/master/misc/img/delete.png)
 
 
